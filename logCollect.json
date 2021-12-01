@@ -1,0 +1,15 @@
+{
+  "logfile": "/home/fds/fts/axway/SecureTransport/var/logs/xferlog",
+  "pattern": "^(?P<timestamp>^[A-Za-z]{3}\\s+[A-Za-z]{3}\\s+[0-9]{1,2}\\s+\\d{2}:\\d{2}:\\d{2}\\s+\\d{4})\\s+(?P<duration>\\d+)\\s+(?P<ip_addrss>\\d{1,3}.\\d{1,3}.\\d{1,3}.\\d{1,3})\\s+(?P<size>[^ ]*)\\s+(?P<file>.*)\\s+(?P<type>(a|b))\\s+(?P<word>[a-z])\\s+(?P<status>[a-z])\\s+(?P<word1>[a-z])\\s+(?P<user>[^ ]*)\\s+(?P<protocol>[^ ]*)\\s+0\\s+\\*$",
+  "dateFormat": "Mon Jan _2 15:04:05 2006 MST",
+  "addTZ": "true",
+  "jsonFrmt": "{ \"@source_host\": \"%s\", \"@timestamp\": \"%s\", \"@message\": \"FTP XFER log\", \"@fields\": { \"file\": \"%s\", \"size\": %s, \"duration\": %s, \"protocol\": \"%s\", \"clientIp\": \"%s\", \"user\": \"%s\", \"flags\": { \"type\": \"%s\", \"status\": \"%s\", \"word1\": \"%s\", \"word2\": \"%s\" }}}",
+  "jsonFlds": "host,timestamp,file,size,duration,protocol,ip_addrss,user,type,status,word,word1",
+  "clpURL": "http://submit.log-stg.factset.com:21102/test_container",
+  "clpHeaders":
+  [
+    { "header": "Content-Type",
+      "content": "text/plain; charset=UTF-8"
+    }
+  ]
+}
